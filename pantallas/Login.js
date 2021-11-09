@@ -5,15 +5,19 @@ import Loader from '../components/Loader';
 function Login({ navigation }) {
   return (
     <View style={styles.container}>
-      <Loader style={styles.load}></Loader>
+      <Loader/>
+        <View>
       <Text style={styles.titulo}>Login</Text>
       <Text style={styles.abajotitu}>por favor logueate para continar</Text>
+        </View>
+        <View>
       <TouchableOpacity 
       onPress = { () => navigation.navigate('Registro')}
       style={styles.botonmenu1}
       >
         <Text style={styles.textomenu}> Ingresar </Text>
       </TouchableOpacity>
+        </View>
     </View>
   );
 }

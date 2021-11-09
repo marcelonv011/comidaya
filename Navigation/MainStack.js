@@ -22,6 +22,13 @@ const MainStack = () => {
           }}
            />
 
+          <Stack.Screen 
+          name='Registro' 
+          component={Registro} 
+          options= {{ 
+          title:  'Creando usuario',
+          }}
+          />
   
   
         </Stack.Navigator>
