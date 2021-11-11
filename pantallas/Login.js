@@ -11,11 +11,15 @@ import passwordicon from "../assets/passwordicon.png"
 function Login({ navigation }) {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.loadcontainer}>  
+        <Loader/>
+      </View>        
+      <View style={styles.textocontainer}>
         <Text style={styles.titulo}>Login</Text>
         <Text style={styles.abajotitu}>por favor logueate para continuar</Text>
       </View>
-      <View style={styles.entradatexto}>
+      <View style={styles.containinput1}>
+        <View style={styles.entradatexto}>
         <Image 
           source={iconoemail}
           style={{ width: 40, height: 40 }}
@@ -27,8 +31,10 @@ function Login({ navigation }) {
           autoCorrect={false}
           placeholderTextColor='white'
         />
+       </View>
       </View>
-      <View style={styles.entradatexto}>
+      <View style={styles.containinput2}> 
+        <View style={styles.entradatexto2}>
         <Image 
           source={passwordicon}
           style={{ width: 40, height: 40 }}
@@ -43,8 +49,9 @@ function Login({ navigation }) {
           /*value={this.state.password}
           onChangeText={this.onPasswordEntry}*/
         />
+        </View>
       </View>
-      <View>
+      <View style={styles.botoningreso}>
         <TouchableOpacity 
          onPress = { () => navigation.navigate('Registro')}
          style={styles.botonmenu1}
@@ -62,17 +69,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#131634',
     flexDirection: 'column',
+    padding: 20,
+  },
+  loadcontainer: {
+    flex: 10,
+  },
+  textocontainer: {
+    flex: 5,
   },
    titulo:{
     color: "#ffffff",
-    fontSize: 61,  
-    margin: 50,
-    textAlign: 'center',
+    fontSize: 81,  
+    textAlign: 'center', 
+    margin: 20,
   },
   abajotitu:{
     color: "#05F7FF",
     fontSize: 20,
-    margin: 10, 
+    textAlign: 'center',
   },
   botonmenu1: {
     backgroundColor: "#05F7FF",
@@ -80,7 +94,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
     height: 40,
     width: 105,
-    margin: 145,
+    alignSelf: 'center',
   },
   botontexto: {
     color: "#000000",
@@ -90,18 +104,34 @@ const styles = StyleSheet.create({
   entradatexto: {
     flexDirection: 'row',
     borderBottomWidth: 1,
-   /* paddingBottom: 10, */
     backgroundColor: "rgb(35, 61, 77)",
-    focusColor: "#05F7FF",
-    borderColor: "#05F7FF"
+    borderColor: "#05F7FF",
+    width: 300,
+    margin: 20,
+    alignSelf: 'center'
+  },
+  containinput1: {
+    flex: 5,
+  },
+  containinput2: {
+    flex: 5,
   },
   estiloinput: {
-    flex: 1,
     color: "white",
-    focusColor: "#05F7FF",
-    borderColor: "#05F7FF"
+    borderColor: "#05F7FF",
+    padding: 15,
   },
-  
+  entradatexto2: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    backgroundColor: "rgb(35, 61, 77)",
+    borderColor: "#05F7FF",
+    width: 300,
+    alignSelf: 'center'
+  },
+  botoningreso: {
+    flex: 10,
+  },
 });
 
 export default Login;

@@ -22,9 +22,10 @@ const Loader = () => {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        height: 244,
+        height: 200,
         overflow: "visible",
         alignContent: 'center', 
+        margin: 30
     },
 });
 
