@@ -53,13 +53,31 @@ function Login({ navigation }) {
       </View>
       <View style={styles.botoningreso}>
         <TouchableOpacity 
-         onPress = { () => navigation.navigate('Registro')}
+         onPress = { () => navigation.navigate('Menuprincipal')}
          style={styles.botonmenu1}
         >
         <Text style={styles.botontexto}> Ingresar </Text>
         </TouchableOpacity>
       </View>
-        
+      <View style={styles.containerforgotpass}>
+        <Text 
+        style={styles.olvidopassword}
+        onPress={() => navigation.navigate('Recovery')}
+        > 
+      ¿Olvido su contraseña?
+      </Text>
+      </View>
+      <View style={styles.containerforgotpass}>
+        <Text style={styles.noaccount}> 
+          ¿Todavía no tienes cuenta?
+        </Text>
+        <Text 
+        style={styles.registrostyle}
+        onPress={() => navigation.navigate('Registro')}
+        > 
+      Registrarme
+      </Text>
+      </View>  
     </View>
   );
 }
@@ -81,7 +99,7 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 81,  
     textAlign: 'center', 
-    margin: 20,
+    margin: 10,
   },
   abajotitu:{
     color: "#05F7FF",
@@ -107,14 +125,17 @@ const styles = StyleSheet.create({
     backgroundColor: "rgb(35, 61, 77)",
     borderColor: "#05F7FF",
     width: 300,
-    margin: 20,
+    margin: 10,
     alignSelf: 'center'
   },
   containinput1: {
-    flex: 5,
+    flex: 3,
+    bottom: -10
   },
   containinput2: {
-    flex: 5,
+    flex: 1,
+    margin: 10,
+    bottom: -40
   },
   estiloinput: {
     color: "white",
@@ -127,10 +148,34 @@ const styles = StyleSheet.create({
     backgroundColor: "rgb(35, 61, 77)",
     borderColor: "#05F7FF",
     width: 300,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    margin: 10,
   },
   botoningreso: {
-    flex: 10,
+    flex: 3,
+    bottom: -60,
+  },
+  olvidopassword: {
+    color: "#05F7FF",
+    fontSize: 18,
+    alignSelf: "center",
+    bottom: -80,
+  },
+  containerforgotpass: {
+    flex: 5,
+  },
+  registrostyle: {
+    color: "#05F7FF",
+    left: 250,
+    fontSize: 20,
+    bottom: -20,
+  },
+  noaccount: {
+    color: "#FFFFFF",
+    left: 50,
+    position: 'absolute',
+    fontSize: 20,
+    bottom: 65,
   },
 });
 
