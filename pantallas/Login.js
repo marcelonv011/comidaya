@@ -2,7 +2,8 @@ import * as React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image} from 'react-native';
 import Loader from '../components/Loader'; /* agregar loader despues */
 import iconoemail from "../assets/emailicon.png";
-import passwordicon from "../assets/passwordicon.png"
+import passwordicon from "../assets/passwordicon.png";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 /* mirar con expo como esta todo */
 /* css input arreglar*/
 /* fijarme icons*/
@@ -10,7 +11,7 @@ import passwordicon from "../assets/passwordicon.png"
 
 function Login({ navigation }) {
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView style={styles.container}>
       <View style={styles.loadcontainer}>  
         <Loader/>
       </View>        
@@ -43,7 +44,8 @@ function Login({ navigation }) {
         <TextInput
           style={styles.estiloinput}
           autoCorrect={false}
-          secureTextEntry
+          secureTextEntry={true}
+          password={true}
           placeholder="Password"
           placeholderTextColor='white'
           /*value={this.state.password}
@@ -77,8 +79,9 @@ function Login({ navigation }) {
         > 
       Registrarme
       </Text>
+      
       </View>  
-    </View>
+   </KeyboardAwareScrollView>
   );
 }
 
@@ -130,7 +133,7 @@ const styles = StyleSheet.create({
   },
   containinput1: {
     flex: 3,
-    bottom: -10
+    bottom: -30
   },
   containinput2: {
     flex: 1,
@@ -153,13 +156,13 @@ const styles = StyleSheet.create({
   },
   botoningreso: {
     flex: 3,
-    bottom: -60,
+    bottom: -70,
   },
   olvidopassword: {
     color: "#05F7FF",
     fontSize: 18,
     alignSelf: "center",
-    bottom: -80,
+    bottom: -90,
   },
   containerforgotpass: {
     flex: 5,
