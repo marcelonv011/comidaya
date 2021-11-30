@@ -1,13 +1,17 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-
+import { StyleSheet, View, Text, Image, StatusBar } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
+import imagebotonatras from "../assets/atras.png"
 
 function Registro ({ navigation }) {
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView style={styles.container}>
+       <StatusBar hidden={true} /> 
+    
     <Text style={styles.registerletra}> Registrarse </Text>
-    <Text> Rellené los campos para continuar </Text>
-    </View>
+    <Text style={styles.campoletra}> Rellené los campos para continuar </Text>
+    </KeyboardAwareScrollView>
   );
 }
 
@@ -19,9 +23,20 @@ const styles = StyleSheet.create({
 
   registerletra: {
     color: "#FFFFFF",
-    fontSize: 20
+    fontSize: 60,
+    bottom: -30,
+    textAlign: 'center',
   },
-  
+  campoletra: {
+    color: "#FFFFFF",
+    fontSize: 28,
+    bottom: -50,
+    left: 40,
+  },
+  botonatras: {
+    height: 50,
+    width: 50
+  }
 });
 
 export default Registro;

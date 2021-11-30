@@ -11,14 +11,14 @@ const MainStack = () => {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator>
           
           <Stack.Screen 
           name='Login' 
           component={Login}
           options={{
           title: '',
-
+          headerShown: false
           }}
            />
 
@@ -26,7 +26,11 @@ const MainStack = () => {
           name='Registro' 
           component={Registro} 
           options= {{ 
-          title:  'Creando usuario',
+          title:  '',
+          headerBackTitle: "",
+          headerStyle: {
+            elevation: 0,
+          },
           }}
           />
   
