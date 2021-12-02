@@ -26,11 +26,13 @@ const MainStack = () => {
           name='Registro' 
           component={Registro} 
           options= {{ 
-          title:  '',
+          title:  'REGISTRARSE',
+          headerTintColor: "#ffffff",
           headerBackTitle: "",
           headerStyle: {
-            elevation: 0,
+            backgroundColor: '#131634',
           },
+          
           }}
           />
   

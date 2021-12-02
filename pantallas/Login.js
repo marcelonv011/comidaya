@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, StatusBar} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, StatusBar, SafeAreaView} from 'react-native';
 import Loader from '../components/Loader'; /* agregar loader despues */
 import iconoemail from "../assets/emailicon.png";
 import passwordicon from "../assets/passwordicon.png";
@@ -20,28 +20,33 @@ function Login({ navigation }) {
         <Text style={styles.titulo}>Login</Text>
         <Text style={styles.abajotitu}>por favor logueate para continuar</Text>
       </View>
-      <View style={styles.containinput1}>
+
         <View style={styles.entradatexto}>
         <Image 
           source={iconoemail}
           style={{ width: 40, height: 40 }}
           fadeDuration={0}
         />
+        <SafeAreaView>
         <TextInput
           style={styles.estiloinput}
           placeholder="Email"
           autoCorrect={false}
           placeholderTextColor='white'
+          returnKeyType = {"next"}
+          blurOnSubmit={false}
         />
+        </SafeAreaView>
        </View>
-      </View>
-      <View style={styles.containinput2}> 
+
+      
         <View style={styles.entradatexto2}>
         <Image 
           source={passwordicon}
           style={{ width: 40, height: 40 }}
           fadeDuration={0}
         />
+        <SafeAreaView>
         <TextInput
           style={styles.estiloinput}
           autoCorrect={false}
@@ -49,11 +54,13 @@ function Login({ navigation }) {
           password={true}
           placeholder="Password"
           placeholderTextColor='white'
+          blurOnSubmit={false}
           /*value={this.state.password}
           onChangeText={this.onPasswordEntry}*/
         />
+        </SafeAreaView>
         </View>
-      </View>
+
       <View style={styles.botoningreso}>
         <TouchableOpacity 
          onPress = { () => navigation.navigate('Menuprincipal')}
@@ -126,22 +133,15 @@ const styles = StyleSheet.create({
   },
   entradatexto: {
     flexDirection: 'row',
-    borderBottomWidth: 1,
-    backgroundColor: "rgb(35, 61, 77)",
+    borderWidth: 2,
+    backgroundColor: "#1D3557",
     borderColor: "#05F7FF",
     width: 300,
     margin: 10,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    bottom: -220
   },
-  containinput1: {
-    flex: 3,
-    bottom: -250
-  },
-  containinput2: {
-    flex: 1,
-    margin: 10,
-    bottom: -255
-  },
+  
   estiloinput: {
     color: "white",
     borderColor: "#05F7FF",
@@ -149,12 +149,12 @@ const styles = StyleSheet.create({
   },
   entradatexto2: {
     flexDirection: 'row',
-    borderBottomWidth: 1,
-    backgroundColor: "rgb(35, 61, 77)",
+    borderWidth: 2,
+    backgroundColor: "#1D3557",
     borderColor: "#05F7FF",
     width: 300,
     alignSelf: 'center',
-    margin: 10,
+    bottom: -240
   },
   botoningreso: {
     flex: 3,
