@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, StatusBar, SafeAreaView} from 'react-native';
 import Loader from '../components/Loader'; /* agregar loader despues */
 import iconoemail from "../assets/emailicon.png";
-import passwordicon from "../assets/passwordicon.png";
+import contrasena from "../assets/contrasena.png";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 /* mirar con expo como esta todo */
 /* css input arreglar*/
@@ -24,13 +24,13 @@ function Login({ navigation }) {
         <View style={styles.entradatexto}>
         <Image 
           source={iconoemail}
-          style={{ width: 40, height: 40 }}
+          style={{ width: 30, height: 30, bottom: -10, left: 5 }}
           fadeDuration={0}
         />
         <SafeAreaView>
         <TextInput
           style={styles.estiloinput}
-          placeholder="Email"
+          placeholder="E-mail"
           autoCorrect={false}
           placeholderTextColor='white'
           returnKeyType = {"next"}
@@ -42,8 +42,8 @@ function Login({ navigation }) {
       
         <View style={styles.entradatexto2}>
         <Image 
-          source={passwordicon}
-          style={{ width: 40, height: 40 }}
+          source={contrasena}
+          style={{ width: 30, height: 30, bottom: -7, left: 5 }}
           fadeDuration={0}
         />
         <SafeAreaView>
@@ -69,6 +69,7 @@ function Login({ navigation }) {
         <Text style={styles.botontexto}> Ingresar </Text>
         </TouchableOpacity>
       </View>
+
       <View style={styles.containerforgotpass}>
         <Text 
         style={styles.olvidopassword}
